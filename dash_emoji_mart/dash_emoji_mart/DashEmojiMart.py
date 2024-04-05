@@ -13,6 +13,8 @@ Keyword arguments:
 
 - autoFocus (boolean; default False)
 
+- categories (list; optional)
+
 - categoryIcons (dict; optional)
 
 - custom (list; optional)
@@ -65,10 +67,10 @@ Keyword arguments:
     _namespace = 'dash_emoji_mart'
     _type = 'DashEmojiMart'
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, value=Component.UNDEFINED, custom=Component.UNDEFINED, onEmojiSelect=Component.UNDEFINED, onClickOutside=Component.UNDEFINED, onAddCustomEmoji=Component.UNDEFINED, autoFocus=Component.UNDEFINED, categoryIcons=Component.UNDEFINED, dynamicWidth=Component.UNDEFINED, emojiButtonColors=Component.UNDEFINED, emojiButtonRadius=Component.UNDEFINED, emojiButtonSize=Component.UNDEFINED, emojiSize=Component.UNDEFINED, emojiVersion=Component.UNDEFINED, exceptEmojis=Component.UNDEFINED, icons=Component.UNDEFINED, locale=Component.UNDEFINED, maxFrequentRows=Component.UNDEFINED, navPosition=Component.UNDEFINED, noCountryFlags=Component.UNDEFINED, noResultsEmoji=Component.UNDEFINED, perLine=Component.UNDEFINED, previewEmoji=Component.UNDEFINED, previewPosition=Component.UNDEFINED, searchPosition=Component.UNDEFINED, set=Component.UNDEFINED, skin=Component.UNDEFINED, skinTonePosition=Component.UNDEFINED, theme=Component.UNDEFINED, getSpritesheetURL=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'autoFocus', 'categoryIcons', 'custom', 'dynamicWidth', 'emojiButtonColors', 'emojiButtonRadius', 'emojiButtonSize', 'emojiSize', 'emojiVersion', 'exceptEmojis', 'icons', 'locale', 'maxFrequentRows', 'navPosition', 'noCountryFlags', 'noResultsEmoji', 'perLine', 'previewEmoji', 'previewPosition', 'searchPosition', 'set', 'skin', 'skinTonePosition', 'theme', 'value']
+    def __init__(self, id=Component.UNDEFINED, value=Component.UNDEFINED, custom=Component.UNDEFINED, onEmojiSelect=Component.UNDEFINED, onClickOutside=Component.UNDEFINED, onAddCustomEmoji=Component.UNDEFINED, autoFocus=Component.UNDEFINED, categories=Component.UNDEFINED, categoryIcons=Component.UNDEFINED, dynamicWidth=Component.UNDEFINED, emojiButtonColors=Component.UNDEFINED, emojiButtonRadius=Component.UNDEFINED, emojiButtonSize=Component.UNDEFINED, emojiSize=Component.UNDEFINED, emojiVersion=Component.UNDEFINED, exceptEmojis=Component.UNDEFINED, icons=Component.UNDEFINED, locale=Component.UNDEFINED, maxFrequentRows=Component.UNDEFINED, navPosition=Component.UNDEFINED, noCountryFlags=Component.UNDEFINED, noResultsEmoji=Component.UNDEFINED, perLine=Component.UNDEFINED, previewEmoji=Component.UNDEFINED, previewPosition=Component.UNDEFINED, searchPosition=Component.UNDEFINED, set=Component.UNDEFINED, skin=Component.UNDEFINED, skinTonePosition=Component.UNDEFINED, theme=Component.UNDEFINED, getSpritesheetURL=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'autoFocus', 'categories', 'categoryIcons', 'custom', 'dynamicWidth', 'emojiButtonColors', 'emojiButtonRadius', 'emojiButtonSize', 'emojiSize', 'emojiVersion', 'exceptEmojis', 'icons', 'locale', 'maxFrequentRows', 'navPosition', 'noCountryFlags', 'noResultsEmoji', 'perLine', 'previewEmoji', 'previewPosition', 'searchPosition', 'set', 'skin', 'skinTonePosition', 'theme', 'value']
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'autoFocus', 'categoryIcons', 'custom', 'dynamicWidth', 'emojiButtonColors', 'emojiButtonRadius', 'emojiButtonSize', 'emojiSize', 'emojiVersion', 'exceptEmojis', 'icons', 'locale', 'maxFrequentRows', 'navPosition', 'noCountryFlags', 'noResultsEmoji', 'perLine', 'previewEmoji', 'previewPosition', 'searchPosition', 'set', 'skin', 'skinTonePosition', 'theme', 'value']
+        self.available_properties = ['id', 'autoFocus', 'categories', 'categoryIcons', 'custom', 'dynamicWidth', 'emojiButtonColors', 'emojiButtonRadius', 'emojiButtonSize', 'emojiSize', 'emojiVersion', 'exceptEmojis', 'icons', 'locale', 'maxFrequentRows', 'navPosition', 'noCountryFlags', 'noResultsEmoji', 'perLine', 'previewEmoji', 'previewPosition', 'searchPosition', 'set', 'skin', 'skinTonePosition', 'theme', 'value']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

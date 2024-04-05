@@ -10,23 +10,25 @@
 }
 
 \usage{
-dashEmojiMart(id=NULL, autoFocus=NULL, categoryIcons=NULL, custom=NULL,
-dynamicWidth=NULL, emojiButtonColors=NULL,
-emojiButtonRadius=NULL, emojiButtonSize=NULL,
-emojiSize=NULL, emojiVersion=NULL, exceptEmojis=NULL,
-getSpritesheetURL=NULL, icons=NULL, locale=NULL,
-maxFrequentRows=NULL, navPosition=NULL, noCountryFlags=NULL,
-noResultsEmoji=NULL, onAddCustomEmoji=NULL,
-onClickOutside=NULL, onEmojiSelect=NULL, perLine=NULL,
-previewEmoji=NULL, previewPosition=NULL,
-searchPosition=NULL, set=NULL, skin=NULL,
-skinTonePosition=NULL, theme=NULL, value=NULL)
+dashEmojiMart(id=NULL, autoFocus=NULL, categories=NULL,
+categoryIcons=NULL, custom=NULL, dynamicWidth=NULL,
+emojiButtonColors=NULL, emojiButtonRadius=NULL,
+emojiButtonSize=NULL, emojiSize=NULL, emojiVersion=NULL,
+exceptEmojis=NULL, getSpritesheetURL=NULL, icons=NULL,
+locale=NULL, maxFrequentRows=NULL, navPosition=NULL,
+noCountryFlags=NULL, noResultsEmoji=NULL,
+onAddCustomEmoji=NULL, onClickOutside=NULL,
+onEmojiSelect=NULL, perLine=NULL, previewEmoji=NULL,
+previewPosition=NULL, searchPosition=NULL, set=NULL,
+skin=NULL, skinTonePosition=NULL, theme=NULL, value=NULL)
 }
 
 \arguments{
 \item{id}{Character. }
 
 \item{autoFocus}{Logical. }
+
+\item{categories}{Unnamed list. }
 
 \item{categoryIcons}{Named list. }
 

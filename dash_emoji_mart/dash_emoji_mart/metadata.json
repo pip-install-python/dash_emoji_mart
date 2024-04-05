@@ -80,6 +80,17 @@
           "computed": false
         }
       },
+      "categories": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
       "categoryIcons": {
         "type": {
           "name": "object"

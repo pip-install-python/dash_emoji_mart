@@ -10,6 +10,7 @@ A DashEmojiMart component.
 Keyword arguments:
 - `id` (String; optional)
 - `autoFocus` (Bool; optional)
+- `categories` (Array; optional)
 - `categoryIcons` (Dict; optional)
 - `custom` (Array; optional)
 - `dynamicWidth` (Bool; optional)
@@ -36,7 +37,7 @@ Keyword arguments:
 - `value` (String; optional)
 """
 function dashemojimart(; kwargs...)
-        available_props = Symbol[:id, :autoFocus, :categoryIcons, :custom, :dynamicWidth, :emojiButtonColors, :emojiButtonRadius, :emojiButtonSize, :emojiSize, :emojiVersion, :exceptEmojis, :icons, :locale, :maxFrequentRows, :navPosition, :noCountryFlags, :noResultsEmoji, :perLine, :previewEmoji, :previewPosition, :searchPosition, :set, :skin, :skinTonePosition, :theme, :value]
+        available_props = Symbol[:id, :autoFocus, :categories, :categoryIcons, :custom, :dynamicWidth, :emojiButtonColors, :emojiButtonRadius, :emojiButtonSize, :emojiSize, :emojiVersion, :exceptEmojis, :icons, :locale, :maxFrequentRows, :navPosition, :noCountryFlags, :noResultsEmoji, :perLine, :previewEmoji, :previewPosition, :searchPosition, :set, :skin, :skinTonePosition, :theme, :value]
         wild_props = Symbol[]
         return Component("dashemojimart", "DashEmojiMart", "dash_emoji_mart", available_props, wild_props; kwargs...)
 end

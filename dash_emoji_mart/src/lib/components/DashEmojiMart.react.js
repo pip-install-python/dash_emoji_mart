@@ -4,7 +4,7 @@ import Picker from '@emoji-mart/react';
 import data from '@emoji-mart/data';
 
 const DashEmojiMart = (props) => {
-    const {id, setProps, value, custom, onClickOutside, onAddCustomEmoji, autoFocus, categoryIcons, dynamicWidth, emojiButtonColors, emojiButtonRadius, emojiButtonSize, emojiSize, emojiVersion, exceptEmojis, icons, locale, maxFrequentRows, navPosition, noCountryFlags, noResultsEmoji, perLine, previewEmoji, previewPosition, searchPosition, set, skin, skinTonePosition, theme, getSpritesheetURL} = props;
+    const {id, setProps, value, custom, onClickOutside, onAddCustomEmoji, autoFocus,  categories, categoryIcons, dynamicWidth, emojiButtonColors, emojiButtonRadius, emojiButtonSize, emojiSize, emojiVersion, exceptEmojis, icons, locale, maxFrequentRows, navPosition, noCountryFlags, noResultsEmoji, perLine, previewEmoji, previewPosition, searchPosition, set, skin, skinTonePosition, theme, getSpritesheetURL} = props;
 
     const handleEmojiSelect = (emoji) => {
         let emojiValue;
@@ -34,6 +34,7 @@ const DashEmojiMart = (props) => {
                 onClickOutside={onClickOutside}
                 onAddCustomEmoji={onAddCustomEmoji}
                 autoFocus={autoFocus}
+                categories={categories}
                 categoryIcons={categoryIcons}
                 dynamicWidth={dynamicWidth}
                 emojiButtonColors={emojiButtonColors}
@@ -68,6 +69,7 @@ DashEmojiMart.defaultProps = {
     onClickOutside: null,
     onAddCustomEmoji: null,
     autoFocus: false,
+    categories: [],
     categoryIcons: {},
     dynamicWidth: false,
     emojiButtonColors: [],
@@ -102,6 +104,7 @@ DashEmojiMart.propTypes = {
     onClickOutside: PropTypes.func,
     onAddCustomEmoji: PropTypes.func,
     autoFocus: PropTypes.bool,
+    categories: PropTypes.array,
     categoryIcons: PropTypes.object,
     dynamicWidth: PropTypes.bool,
     emojiButtonColors: PropTypes.array,
