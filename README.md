@@ -1,3 +1,138 @@
+![dash-emoji-mart](./github_assets/0F4D99E2-9ECB-4EE1-A55C-768D7FEE9BEC-ezgif.com-optimize.gif)
+
+A goal of mine, is to make components that are universal but specifically elegant and easy to use within mobile development. With this I wanted to design an emoji, icon or picture selector that was intuitive and easy for any user to operate on any device.
+
+Based off https://github.com/missive/emoji-mart I've successfully ported over this component to dash with a `pip install dash-emoji-mart` you should be able to get this running within your own dash applications.
+
+The dash projects github repo can be found here (⭐️): https://github.com/pip-install-python/dash_emoji_mart
+
+Pypi: https://pypi.org/project/dash-emoji-mart/
+
+### Options / Props
+
+|Option|Default|Choices|Description|
+| --- | --- | --- | --- |
+|**data**|`{}`||Data to use for the picker|
+|**categories**|`[]`|`frequent`, `people`, `nature`, `foods`, `activity`, `places`, `objects`, `symbols`, `flags`|Categories to show in the picker. Order is respected.|
+|**custom**|`[]`||[Custom emojis](https://github.com/missive/emoji-mart?tab=readme-ov-file#custom-emojis)|
+|**onEmojiSelect**|`null`||Callback when an emoji is selected|
+|**onClickOutside**|`null`||Callback when a click outside of the picker happens|
+|**onAddCustomEmoji**|`null`||Callback when the *Add custom emoji* button is clicked. The button will only be displayed if this callback is provided. It is displayed when search returns no results.|
+|**autoFocus**|`false`||Whether the picker should automatically focus on the search input|
+|**categoryIcons**|`{}`||[Custom category icons](https://github.com/missive/emoji-mart?tab=readme-ov-file#custom-category-icons)|
+|**dynamicWidth**|`false`||Whether the picker should calculate `perLine` dynamically based on the width of `<em-emoji-picker>`. When enabled, `perLine` is ignored|
+|**emojiButtonColors**|`[]`|i.e. `#f00`, `pink`, `rgba(155,223,88,.7)`|An array of color that affects the hover background color|
+|**emojiButtonRadius**|`100%`|i.e. `6px`, `1em`, `100%`|The radius of the emoji buttons|
+|**emojiButtonSize**|`36`||The size of the emoji buttons|
+|**emojiSize**|`24`||The size of the emojis (inside the buttons)|
+|**emojiVersion**|`14`|`1`, `2`, `3`, `4`, `5`, `11`, `12`, `12.1`, `13`, `13.1`, `14`|The version of the emoji data to use. Latest version supported in `@emoji-mart/data` is currently [14](https://emojipedia.org/emoji-14.0)|
+|**exceptEmojis**|`[]`||List of emoji IDs that will be excluded from the picker|
+|**icons**|`auto`|`auto`, `outline`, `solid`|The type of icons to use for the picker. `outline` with light theme and `solid` with dark theme.|
+|**locale**|`en`|`en`, `ar`, `be`, `cs`, `de`, `es`, `fa`, `fi`, `fr`, `hi`, `it`, `ja`, `ko`, `nl`, `pl`, `pt`, `ru`, `sa`, `tr`, `uk`, `vi`, `zh`|The locale to use for the picker|
+|**maxFrequentRows**|`4`||The maximum number of frequent rows to show. `0` will disable frequent category|
+|**navPosition**|`top`|`top`, `bottom`, `none`|The position of the navigation bar|
+|**noCountryFlags**|`false`||Whether to show country flags or not. If not provided, tbhis is handled automatically (Windows doesn’t support country flags)|
+|**noResultsEmoji**|`cry`||The id of the emoji to use for the no results emoji|
+|**perLine**|`9`||The number of emojis to show per line|
+|**previewEmoji**|`point_up`||The id of the emoji to use for the preview when not hovering any emoji. `point_up` when preview position is bottom and `point_down` when preview position is top.|
+|**previewPosition**|`bottom`|`top`, `bottom`, `none`|The position of the preview|
+|**searchPosition**|`sticky`|`sticky`, `static`, `none`|The position of the search input|
+|**set**|`native`|`native`, `apple`, `facebook`, `google`, `twitter`|The set of emojis to use for the picker. `native` being the most performant, others rely on spritesheets.|
+|**skin**|`1`|`1`, `2`, `3`, `4`, `5`, `6`|The emojis skin tone|
+|**skinTonePosition**|`preview`|`preview`, `search`, `none`|The position of the skin tone selector|
+|**theme**|`auto`|`auto`, `light`, `dark`|The color theme of the picker|
+
+
+### A base example to get going:
+```
+from dash import *
+from dash_emoji_mart import DashEmojiMart
+from urllib.parse import urlparse
+
+app = Dash(__name__)
+
+custom=[
+    {
+        'id': 'gifs',
+        'name': 'GIFs',
+        'emojis': [
+            {
+                'id': 'party_parrot',
+                'name': 'Party Parrot',
+                'short_names': ['party_parrot'],
+                'keywords': ['dance', 'dancing'],
+                'skins': [{'src': 'https://missiveapp.com/open/emoji-mart/parrot.6a845cb2.gif'}],
+                'native': '',
+                'unified': 'gifs',
+            },
+            {
+                'id': 'plotly',
+                'name': 'Plotly',
+                'short_names': ['plotly'],
+                'keywords': ['plotly', 'dash'],
+                'skins': [{'src': 'https://store-images.s-microsoft.com/image/apps.36868.bfb0e2ee-be9e-4c73-807f-e0a7b805b1be.712aff5d-5800-47e0-97be-58d17ada3fb8.a46845e6-ce94-44cf-892b-54637c6fcf06'}],
+                'native': '',
+                'unified': 'gifs',
+            },
+        ],
+    },
+]
+
+app.layout = html.Div([
+   DashEmojiMart(
+       id='input',
+       custom=custom,
+       autoFocus=False,
+       categoryIcons={},
+       dynamicWidth=False,
+       emojiButtonColors=[],
+       emojiButtonRadius="100%",
+       emojiButtonSize=36,
+       emojiSize=24,
+       emojiVersion=14,
+       exceptEmojis=[],
+       icons="auto",
+       locale="en",
+       maxFrequentRows=4,
+       navPosition="top",
+       noCountryFlags=False,
+       noResultsEmoji="cry",
+       perLine=9,
+       previewEmoji="point_up",
+       previewPosition="bottom",
+       searchPosition="sticky",
+       set="native",
+       skin=1,
+       skinTonePosition="preview",
+       theme="auto",
+    ),
+    html.Div(id='output')
+])
+
+
+@app.callback(
+    Output('output', 'children'),
+    Input('input', 'value')
+)
+def update_output(value):
+    print(value)
+    # Check if value is a URL
+    try:
+        result = urlparse(value)
+        if all([result.scheme, result.netloc]):
+            # If value is a URL, return it as an image
+            return html.Img(src=value, style={'width': '40px'})
+    except ValueError:
+        pass
+    # If value is not a URL, return it as is
+    return html.H1(value)
+
+if __name__ == '__main__':
+    app.run_server(debug=True, port='1111')
+```
+### Custom Categories
+
+```
 from dash import *
 from dash_emoji_mart import DashEmojiMart
 from urllib.parse import urlparse
@@ -85,3 +220,19 @@ def update_output(value):
 
 if __name__ == '__main__':
     app.run_server(debug=True, port='1111')
+
+
+```
+
+Hope this helps some of you along your software development journey enjoy this package check out some of my others:
+
+1. `full-calendar-component`:  https://community.plotly.com/t/pip-install-full-calendar-component/83460/8
+
+2. `dash-summernote`: https://community.plotly.com/t/pip-install-dash-summernote/83562/2
+
+3. `dash-swiper`: https://community.plotly.com/t/pip-install-dash-swiper/83573
+
+4. `dash-insta-stories`: https://community.plotly.com/t/pip-install-dash-insta-stories/83566
+
+Happy coding,
+Pip
