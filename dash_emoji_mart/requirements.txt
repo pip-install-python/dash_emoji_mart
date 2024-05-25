@@ -14,11 +14,8 @@ dash-emoji-mart==0.0.2
 dash-extensions==1.0.14
 dash-html-components==2.0.0
 dash-iconify==0.1.2
-dash-insta-stories==0.0.1
 dash-leaflet==1.0.15
 dash-mantine-components==0.12.1
-dash-summernote==0.0.1
-dash-swiper==0.0.1
 dash-table==5.0.0
 dataclass-wizard==0.22.3
 distlib==0.3.8
