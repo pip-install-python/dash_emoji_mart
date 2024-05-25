@@ -6,6 +6,14 @@ import data from '@emoji-mart/data';
 const DashEmojiMart = (props) => {
     const {id, setProps, value, custom, onClickOutside, onAddCustomEmoji, autoFocus,  categories, categoryIcons, dynamicWidth, emojiButtonColors, emojiButtonRadius, emojiButtonSize, emojiSize, emojiVersion, exceptEmojis, icons, locale, maxFrequentRows, navPosition, noCountryFlags, noResultsEmoji, perLine, previewEmoji, previewPosition, searchPosition, set, skin, skinTonePosition, theme, getSpritesheetURL} = props;
 
+
+    const customCategories = custom.map(category => {
+        return {
+            ...category,
+            icon: categoryIcons[category.id]
+        };
+    });
+
     const handleEmojiSelect = (emoji) => {
         let emojiValue;
         // console.log("Test emoji:", emoji.src);
@@ -29,13 +37,12 @@ const DashEmojiMart = (props) => {
                 data={data}
                 // onSelect={handleEmojiSelect}
                 emoji={value}
-                custom={custom}
+                custom={customCategories}
                 onEmojiSelect={handleEmojiSelect}
                 onClickOutside={onClickOutside}
                 onAddCustomEmoji={onAddCustomEmoji}
                 autoFocus={autoFocus}
                 categories={categories}
-                categoryIcons={categoryIcons}
                 dynamicWidth={dynamicWidth}
                 emojiButtonColors={emojiButtonColors}
                 emojiButtonRadius={emojiButtonRadius}
